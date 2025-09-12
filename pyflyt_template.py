@@ -102,6 +102,19 @@ env.set_mode(8)
 setpoint = np.array([1.0, 2.0, 0.0, 2.0]) # (x, y, yaw, z)
 env.set_setpoint(0, setpoint)
 
+# Goal Visualisation
+goal_visual = p.createVisualShape(
+    p.GEOM_SPHERE,
+    radius=0.05,
+    rgbaColor=[0, 1, 0, 1]
+)
+goal_body = p.createMultiBody(
+    baseMass=0,
+    baseVisualShapeIndex=goal_visual,
+    baseCollisionShapeIndex=-1, 
+    basePosition=np.array([*setpoint[:2], setpoint[-1]])
+)
+
 # Load obstacles
 obstacles = [
 	[0,2,0.5],
