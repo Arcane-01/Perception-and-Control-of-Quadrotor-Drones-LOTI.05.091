@@ -16,8 +16,15 @@ Repository associated with the course **Perception and Control of Quadrotor Dron
 	cd <dir_name>
 	```
 
-3. Run the example template:
+3. Run the example templates:
+
+* **3-D Navigation**
 
 	```bash
 	python3 pyflyt_template.py
+	```
+
+* **2-D Navigation**
+	```bash
+	python3 pyflyt_template_2D.py
 	```
