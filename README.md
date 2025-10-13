@@ -53,3 +53,9 @@ Note that this code has only been tested with ROS-Noetic on Ubuntu 20.04. It is 
 	```
 	
 4. Once the planner is running, you can begin navigation by setting a 2D Nav Goal in RViZ.
+
+## Results
+
+<p align="center">
+	<img src="media/result_2d.gif">
+</p>
