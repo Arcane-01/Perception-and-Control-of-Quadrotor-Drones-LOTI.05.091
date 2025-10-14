@@ -22,16 +22,18 @@ Note that this code has only been tested with ROS-Noetic on Ubuntu 20.04. It is 
 	cd bebop_2d_ws/src
 	git clone https://github.com/Arcane-01/Perception-and-Control-of-Quadrotor-Drones-LOTI.05.091.git -b bebop_2d .
 	```
-
-3. Build the workspace
+3. Install dependencies for this workspace
+	```
+	cd ~/bebop_2d_ws
+	rosdep install --from-paths src --ignore-src -r -y
+	```
+4. Build the workspace
 
 	```
-	cd ../
+	cd ~/bebop_2d_ws
 	catkin build
 	source devel/setup.bash
 	```
-
-## Usage
 
 ## Usage: 
 
