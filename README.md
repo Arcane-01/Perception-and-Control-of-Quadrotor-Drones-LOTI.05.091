@@ -33,8 +33,6 @@ Note that this code has only been tested with ROS-Noetic on Ubuntu 20.04. It is 
 
 ## Usage
 
-## Usage: 
-
 1. To launch the Gazebo simulation with the Jackal, run the following command:
 
 	```
