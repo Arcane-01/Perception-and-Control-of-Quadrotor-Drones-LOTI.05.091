@@ -69,9 +69,6 @@ class QuadNav:
 		self.prev_time = None
 		self.prev_yaw_e = 0.0
 
-		self.theta_avg_num = 13
-		self.theta_arr = np.zeros(self.theta_avg_num)
-
 		# PCD
 		self.cloud = None
 		self.min_dist = None
@@ -80,8 +77,6 @@ class QuadNav:
 
 		# ############# Goal position ###################
 		self.goal_sub = rospy.Subscriber("/move_base_simple/goal", PoseStamped, self.handle_goal)
-
-		self.heading_aligned = False
 
 		#----------------------------------------------------------------------------------
 
@@ -121,7 +116,7 @@ class QuadNav:
 
 			self.key = key
 
-			if vel_optimal != None and np.linalg.norm(self.pose[:2] - self.goal_arr[:2]) > 0.5:
+			if vel_optimal is not None and np.linalg.norm(self.pose[:2] - self.goal_arr[:2]) > 0.5:
 				self.publish_cmd_vel_msg(vel_optimal)
 			if np.linalg.norm(self.pose[:2] - self.goal_arr[:2]) < 0.5:
 				print("!!REACHED GOAL!!")
@@ -136,14 +131,6 @@ class QuadNav:
 		self.goal = goal_data
 		self.goal.pose.position.z = 3.0
 		self.goal_arr = np.array([self.goal.pose.position.x, self.goal.pose.position.y, self.goal.pose.position.z])
-		dx = self.goal.pose.position.x - self.pose[0]
-		dy = self.goal.pose.position.y - self.pose[1]
-		target_yaw = np.arctan2(dy, dx)
-
-
-		self.heading_aligned = False
-		self.target_yaw = target_yaw 
-		self.theta_arr = np.zeros(self.theta_avg_num)
 		self.num = 0
 
 	def ats_callback(self, odom_data, lidar_pcd_ros):
