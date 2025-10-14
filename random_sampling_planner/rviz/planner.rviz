@@ -7,7 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
       Splitter Ratio: 0.5
-    Tree Height: 363
+    Tree Height: 719
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -74,7 +74,7 @@ Visualization Manager:
       Size (Pixels): 5
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /lidar_pcd_base_link
+      Topic: /pointcloud
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true

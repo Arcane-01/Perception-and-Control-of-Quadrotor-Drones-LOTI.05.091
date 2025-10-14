@@ -15,7 +15,7 @@ class PointCloudTransformer:
 
         self.lidar_pcd_sub = rospy.Subscriber("/velodyne_points", PointCloud2, self.lidar_pcd_callback)
 
-        self.lidar_base_link_pub = rospy.Publisher("/lidar_pcd_base_link", PointCloud2, queue_size=1)
+        self.lidar_base_link_pub = rospy.Publisher("/pointcloud", PointCloud2, queue_size=1)
     
     def lidar_pcd_callback(self, pointcloud_msg):
         try:
