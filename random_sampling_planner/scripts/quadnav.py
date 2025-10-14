@@ -112,7 +112,7 @@ class QuadNav:
 
 			self.key = key
 
-			if vel_optimal != None and np.linalg.norm(self.pose[:3] - self.goal_arr[:3]) > 0.5:
+			if vel_optimal is not None and np.linalg.norm(self.pose[:3] - self.goal_arr[:3]) > 0.5:
 				self.publish_cmd_vel_msg(vel_optimal) ## vel_optimal (3,)
 
 			if np.linalg.norm(self.pose[:3] - self.goal_arr[:3]) < 0.5:
