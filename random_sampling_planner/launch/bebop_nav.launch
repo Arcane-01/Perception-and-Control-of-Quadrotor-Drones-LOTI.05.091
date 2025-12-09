@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find random_sampling_planner)/rviz/rviz_obs.rviz" />
+
+  <node pkg="random_sampling_planner" type="quadnav.py" output="screen" name="quadnav_py" />
+
+</launch>

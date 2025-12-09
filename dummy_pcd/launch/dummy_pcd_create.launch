@@ -1,0 +1,19 @@
+<launch>
+  <node name="pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" output="screen">
+    <remap from="cloud_in" to="odom_pcd_topic" />  
+    <param name="target_frame" value="bebop" />  
+    <param name="min_height" value="-5.0" />
+    <param name="max_height" value="5.0" />
+
+    <param name="range_min" value="0.0" />
+    <param name="range_max" value="10.0" />
+
+    <param name="angle_min" value="-3.14159265" />
+    <param name="angle_max" value="3.14159265" />
+
+  </node>
+
+
+  <node pkg="dummy_pcd" type="point_cloud_circular.py" name="point_cloud_circular" output="screen" />
+  <node pkg="dummy_pcd" type="laserscan_to_pointcloud.py" name="laserscan_to_pointcloud" output="screen" />
+</launch>
