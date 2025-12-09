@@ -13,6 +13,7 @@ Repository associated with the course **Perception and Control of Quadrotor Dron
 sudo apt-get install libavahi-client-dev
 sudo apt install ros-noetic-message-to-tf
 sudo apt install ros-noetic-twist-mux
+sudo apt install ros-noetic-pointcloud-to-laserscan
 ```
 
 
