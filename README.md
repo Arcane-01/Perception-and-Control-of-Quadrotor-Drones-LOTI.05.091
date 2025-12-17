@@ -34,7 +34,17 @@ cd bebop_hardware_ws/src
 git clone https://github.com/Arcane-01/Perception-and-Control-of-Quadrotor-Drones-LOTI.05.091.git -b bebop_hardware .
 ```
 
-### 4. Build the workspace
+### 4. Update file paths
+
+- Update the textfile path for the `robot_description` parameter in  
+  [`description.launch`](bebop_autonomy/bebop_description/launch/description.launch#L5)
+
+- Update the Bebop mesh file path in  
+  [`bebop_fixed.urdf`](bebop_autonomy/tmp/bebop_fixed.urdf#L20)
+
+
+
+### 5. Build the workspace
 
 ```bash
 cd ~/bebop_hardware_ws
@@ -42,7 +52,7 @@ catkin build
 source devel/setup.bash
 ```
 
-### 5. Set up environment variable
+### 6. Set up environment variable
 
 Add the following line to your `.bashrc` (replace `path to your bebop_hardware_ws` with the actual path):
 
